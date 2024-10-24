@@ -1,0 +1,10 @@
+dnspython==2.7.0
+iniconfig==2.0.0
+nodeenv==1.9.1
+packaging==24.1
+paho-mqtt==2.1.0
+pluggy==1.5.0
+pymongo==4.10.1
+pyright==1.1.385
+pytest==8.3.3
+typing_extensions==4.12.2

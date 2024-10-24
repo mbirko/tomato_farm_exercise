@@ -4,7 +4,7 @@ from pprint import pprint
 
 
 def main(args):
-    db = ports.mongo_port.get_db(database_name="dota")
+    db = ports.mongo_port.get_db(database_name="tomato_db")
     collection_names = db.list_collection_names()
     print("Collections in database:")
     pprint(collection_names)

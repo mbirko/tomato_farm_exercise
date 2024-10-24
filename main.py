@@ -1,3 +1,4 @@
+from pprint import pp
 import threading
 import time
 import os
@@ -24,16 +25,25 @@ if __name__ == "__main__":
     sensor1.start()
     while True: 
         time.sleep(1)
-# else: 
-#     import pytest
-# 
-#     def test_create_single_temperatur(): 
-#         import adaptors.data_storage_adaptor as dba
-#         test_data = {
-#             "date": "2323-2323-2323",
-#             "temperature": 10.5
-#         }
-# 
-#         dba.create_temperature(test_data)
+else: 
+    import pytest
+
+    def test_create_single_temperatur(): 
+        import adaptors.data_storage_adaptor as dba
+        import pprint
+        test_data = {
+            "timestamp": "2323-2323-2323",
+            "temperature": 10.5
+        }
+
+        dba.create_temperature(test_data)
+        result_data = dba.read_one_temperature(test_data["timestamp"])
+        if result_data == None: 
+            assert False
+        pprint.pprint(result_data)
+        delete_result = dba.delete_one_temperature(test_data["timestamp"])
+        pprint.pprint(delete_result)
+
+        
 
 
